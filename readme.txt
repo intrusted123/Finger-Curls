@@ -8,6 +8,5 @@ if its x check x if its -x check x and inverse rotation if its y check y if its 
 select the inverse rotation option. and from there you are good and have set it up! will be doing a video tutorial later on and link it here.
 
 
-VIDEO HERE: https://youtu.be/rSnNf3PkEqM
-
+VIDEO HERE: https://youtu.be/1b1vP-mCd4Y
 notes: add me on discord if you have any problems:intrusted#0026 and also remember that im making this to help other developers who could be struggling with this and, why the fuck not im bored lol.
