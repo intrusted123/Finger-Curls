@@ -16,8 +16,8 @@ public class FingerCurl : MonoBehaviour
 	public Transform pinkyTip;
 	public Transform pinkyKnuckle;
 	public Transform pinkyBottom;
-	public Transform thumbTip;
 	public Transform thumbKnuckle;
+	public Transform thumbBottom;
 	public float curlAmount;
 	[Header("Curl Direction/Rotation")]
 	public bool x;
@@ -48,21 +48,7 @@ public class FingerCurl : MonoBehaviour
 
 	private void Update()
 	{
-		Thumb();
-		Index();
-		Middle();
-		Ring();
-		Pinky();
-		SetXRotation();
-		SetYRotation();
-		SetZRotation();
-	
-		
-		
-		
-		
-       
-
+		Curls();
 	}
 
 	private void Index()
@@ -103,7 +89,7 @@ public class FingerCurl : MonoBehaviour
 	private void Thumb()
 	{
 
-		thumbTip.transform.localRotation = Quaternion.Euler(thumbTipEuler);
+		thumbBottom.transform.localRotation = Quaternion.Euler(thumbTipEuler);
 		thumbKnuckle.transform.localRotation = Quaternion.Euler(thumbKnuckleEuler);
 	}
 	private void SetXRotation()
@@ -116,14 +102,14 @@ public class FingerCurl : MonoBehaviour
 			middleTipEuler = new Vector3(skeletonAction.middleCurl * curlAmount, 0f, 0f);
 			middleKnuckleEuler = new Vector3(skeletonAction.middleCurl * curlAmount, 0f, 0f);
 			middleBottomEuler = new Vector3(skeletonAction.middleCurl * curlAmount, 0f, 0f);
-			ringTipEuler = middleTipEuler = new Vector3(skeletonAction.ringCurl * curlAmount, 0f, 0f);
-			ringKnuckleEuler = middleTipEuler = new Vector3(skeletonAction.ringCurl * curlAmount, 0f, 0f);
-			ringBottomEuler = middleTipEuler = new Vector3(skeletonAction.ringCurl * curlAmount, 0f, 0f);
-			pinkyTipEuler = middleTipEuler = new Vector3(skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
-			pinkyKnuckleEuler = middleTipEuler = new Vector3(skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
-			pinkyBottomEuler = pinkyTipEuler = middleTipEuler = new Vector3(skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
-			thumbKnuckleEuler = pinkyTipEuler = middleTipEuler = new Vector3(skeletonAction.thumbCurl * curlAmount, 0f, 0f);
-			thumbTipEuler = pinkyTipEuler = middleTipEuler = new Vector3(skeletonAction.thumbCurl * curlAmount, 0f, 0f);
+			ringTipEuler = new Vector3(skeletonAction.ringCurl * curlAmount, 0f, 0f);
+			ringKnuckleEuler = new Vector3(skeletonAction.ringCurl * curlAmount, 0f, 0f);
+			ringBottomEuler  = new Vector3(skeletonAction.ringCurl * curlAmount, 0f, 0f);
+			pinkyTipEuler = new Vector3(skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
+			pinkyKnuckleEuler =  new Vector3(skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
+			pinkyBottomEuler = new Vector3(skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
+			thumbKnuckleEuler =  new Vector3(skeletonAction.thumbCurl * curlAmount, 0f, 0f);
+			thumbTipEuler = new Vector3(skeletonAction.thumbCurl * curlAmount, 0f, 0f);
 
 			
 		}
@@ -135,14 +121,14 @@ public class FingerCurl : MonoBehaviour
 			middleTipEuler = new Vector3(-skeletonAction.middleCurl * curlAmount, 0f, 0f);
 			middleKnuckleEuler = new Vector3(-skeletonAction.middleCurl * curlAmount, 0f, 0f);
 			middleBottomEuler = new Vector3(-skeletonAction.middleCurl * curlAmount, 0f, 0f);
-			ringTipEuler = middleTipEuler = new Vector3(-skeletonAction.ringCurl * curlAmount, 0f, 0f);
-			ringKnuckleEuler = middleTipEuler = new Vector3(-skeletonAction.ringCurl * curlAmount, 0f, 0f);
-			ringBottomEuler = middleTipEuler = new Vector3(-skeletonAction.ringCurl * curlAmount, 0f, 0f);
-			pinkyTipEuler = middleTipEuler = new Vector3(-skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
-			pinkyKnuckleEuler = middleTipEuler = new Vector3(-skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
-			pinkyBottomEuler = pinkyTipEuler = middleTipEuler = new Vector3(-skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
-			thumbKnuckleEuler = pinkyTipEuler = middleTipEuler = new Vector3(-skeletonAction.thumbCurl * curlAmount, 0f, 0f);
-			thumbTipEuler = pinkyTipEuler = middleTipEuler = new Vector3(-skeletonAction.thumbCurl * curlAmount, 0f, 0f);
+			ringTipEuler = new Vector3(-skeletonAction.ringCurl * curlAmount, 0f, 0f);
+			ringKnuckleEuler = new Vector3(-skeletonAction.ringCurl * curlAmount, 0f, 0f);
+			ringBottomEuler = new Vector3(-skeletonAction.ringCurl * curlAmount, 0f, 0f);
+			pinkyTipEuler =  new Vector3(-skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
+			pinkyKnuckleEuler = new Vector3(-skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
+			pinkyBottomEuler =  new Vector3(-skeletonAction.pinkyCurl * curlAmount, 0f, 0f);
+			thumbKnuckleEuler = new Vector3(-skeletonAction.thumbCurl * curlAmount, 0f, 0f);
+			thumbTipEuler = new Vector3(-skeletonAction.thumbCurl * curlAmount, 0f, 0f);
 		}
 	}
 	private void SetYRotation()
@@ -177,6 +163,7 @@ public class FingerCurl : MonoBehaviour
 			ringBottomEuler = new Vector3(0f, -skeletonAction.ringCurl * curlAmount, 0f);
 			pinkyTipEuler = new Vector3(0f, -skeletonAction.pinkyCurl * curlAmount, 0f);
 			pinkyKnuckleEuler = new Vector3(0f, -skeletonAction.pinkyCurl * curlAmount, 0f);
+			pinkyBottomEuler = new Vector3(0f, -skeletonAction.pinkyCurl * curlAmount, 0f);
 			thumbTipEuler = new Vector3(0f, -skeletonAction.thumbCurl * curlAmount, 0f);
 			thumbKnuckleEuler = new Vector3(0f, -skeletonAction.thumbCurl * curlAmount, 0f);
 		}
@@ -197,6 +184,8 @@ public class FingerCurl : MonoBehaviour
 			pinkyTipEuler = new Vector3(0f, 0f, skeletonAction.pinkyCurl * curlAmount);
 			pinkyKnuckleEuler = new Vector3(0f, 0f, skeletonAction.pinkyCurl * curlAmount);
 			pinkyBottomEuler = new Vector3(0f, 0f, skeletonAction.pinkyCurl * curlAmount);
+			thumbTipEuler = new Vector3(0f, 0f, -skeletonAction.thumbCurl * curlAmount);
+			thumbKnuckleEuler = new Vector3(0f, 0f, skeletonAction.thumbCurl * curlAmount);
 		}
 		if (z && InvertRotation)
 		{
@@ -213,7 +202,18 @@ public class FingerCurl : MonoBehaviour
 			pinkyKnuckleEuler = new Vector3(0f, 0f, -skeletonAction.pinkyCurl * curlAmount);
 			pinkyBottomEuler = new Vector3(0f, 0f, -skeletonAction.pinkyCurl * curlAmount);
 			thumbTipEuler = new Vector3(0f, 0f, -skeletonAction.thumbCurl * curlAmount);
-			thumbKnuckleEuler = new Vector3(0f, 0f, -skeletonAction.pinkyCurl * curlAmount);
+			thumbKnuckleEuler = new Vector3(0f, 0f, -skeletonAction.thumbCurl * curlAmount);
 		}
+	}
+	private void Curls()
+    {
+		Index();
+		Thumb();
+		Middle();
+		Ring();
+		Pinky();
+		SetXRotation();
+		SetYRotation();
+		SetZRotation();
 	}
 }
